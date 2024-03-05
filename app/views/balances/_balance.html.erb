@@ -1,0 +1,12 @@
+<div id="<%= dom_id balance %>">
+  <p>
+    <strong>User:</strong>
+    <%= balance.user_id %>
+  </p>
+
+  <p>
+    <strong>Amount in Silveuros:</strong>
+    <%= number_to_currency(balance.amount_in_pennies.to_f / 100) %>
+  </p>
+
+</div>

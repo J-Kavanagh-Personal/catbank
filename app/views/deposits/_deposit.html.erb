@@ -1,0 +1,13 @@
+<div id="<%= dom_id deposit %>">
+
+  <p>
+    <strong>Amount in Silveuros:</strong>
+    <%= number_to_currency(deposit.amount_in_pennies.to_f / 100) %>
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    <%= deposit.created_at.to_fs(:long) %>
+  </p>
+
+</div>

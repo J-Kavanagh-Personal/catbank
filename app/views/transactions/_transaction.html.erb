@@ -1,0 +1,22 @@
+<div id="<%= dom_id transaction %>">
+  <p>
+    <strong>Payee:</strong>
+    <%= transaction.payee_id %>
+  </p>
+
+  <p>
+    <strong>Payer:</strong>
+    <%= transaction.payer_id %>
+  </p>
+
+  <p>
+    <strong>Amount in Silveuros:</strong>
+    <%= number_to_currency(transaction.amount_in_pennies.to_f / 100) %>
+  </p>
+
+  <p>
+    <strong>Reference:</strong>
+    <%= transaction.reference %>
+  </p>
+
+</div>

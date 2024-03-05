@@ -1,0 +1,14 @@
+<h1> Welcome to Catbank </h1>
+
+<% if user_signed_in? %>
+  <div> Welcome <%= current_user.email %> </div>
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+  <% if current_user.balance %>
+    <%= button_to "See balance", balance_path(current_user.balance), method: :get %>
+  <% else %>
+    <%= button_to "See balance", balances_path(balance: {user_id: current_user.id, amount_in_pennies: 100000}), method: :post %>
+  <% end %>
+
+<% else %>
+  <%= button_to "Sign in", new_user_session_path %>
+<% end %>

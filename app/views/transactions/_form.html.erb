@@ -1,0 +1,36 @@
+<%= form_with(model: transaction, url: balance_transactions_url) do |form| %>
+  <% if transaction.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+        <% transaction.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :payee_id, style: "display: block" %>
+    <%= form.number_field :payee_id %>
+  </div>
+
+  <div>
+    <%= form.number_field :payer_id, style: "display: none", value: current_user.id %>
+  </div>
+
+  <div>
+    <%= form.label :amount_in_pennies, style: "display: block" %>
+    <%= form.number_field :amount_in_pennies %>
+  </div>
+
+  <div>
+    <%= form.label :reference, style: "display: block" %>
+    <%= form.text_field :reference %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

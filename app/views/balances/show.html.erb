@@ -1,0 +1,6 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @balance %>
+
+<%= link_to "Transactions", balance_transactions_path(@balance) %>
+<%= link_to "Deposits", balance_deposits_path(@balance) %>
