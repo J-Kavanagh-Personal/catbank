@@ -22,3 +22,4 @@ Basic prototype to send deposit, keep track of silveuros and send them to other 
 - Run rails locally via `rails s`
 - Access the application at `http://127.0.0.1:3000/`
 - `rspec` to run tests
+- `bundle exec sidekiq`
